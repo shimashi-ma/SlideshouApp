@@ -9,13 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+   
     
     //スライドショーの画像
     @IBOutlet weak var slidesImage: UIImageView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    
+    //画像をタップしたら二つ目の画面へ
+    @IBAction func tapAction(_ sender: Any) {
     }
     
     //進む
