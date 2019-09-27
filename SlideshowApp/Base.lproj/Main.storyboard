@@ -63,6 +63,7 @@
                 <tapGestureRecognizer id="vbr-K4-d7K">
                     <connections>
                         <action selector="tapAction:" destination="BYZ-38-t0r" id="ZIT-2S-foJ"/>
+                        <segue destination="5ef-tz-WHS" kind="show" id="OtO-B6-m0o"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
