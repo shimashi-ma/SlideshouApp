@@ -38,6 +38,10 @@ class ViewController: UIViewController {
     @IBAction func startButton(_ sender: Any) {
     }
     
+    //二つ目の画面の戻るボタンを押すとこ一つ目の画面に戻る
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
+    
 
 
 

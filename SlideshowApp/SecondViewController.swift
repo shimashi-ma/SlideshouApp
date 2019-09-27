@@ -23,11 +23,9 @@ class SecondViewController: UIViewController {
     }
     
     
-    //一つ目の画面に戻る
-    @IBAction func returnButton(_ sender: Any) {
-    }
     
-
+    
+    
     /*
     // MARK: - Navigation
 
