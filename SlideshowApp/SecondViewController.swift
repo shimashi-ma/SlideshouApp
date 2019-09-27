@@ -9,11 +9,22 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
+    
+    //拡大表示の画像
+    @IBOutlet weak var enlargedImage: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    //一つ目の画面に戻る
+    @IBAction func returnButton(_ sender: Any) {
     }
     
 
