@@ -20,6 +20,12 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //背景画像を設定
+        let image = UIImage(named: "noteimage")
+        self.view.backgroundColor = UIColor(patternImage: image!)
+        
+        
     }
     
     

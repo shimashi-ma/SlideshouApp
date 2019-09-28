@@ -10,18 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
    
-    
     //スライドショーの画像
-    @IBOutlet weak var slidesImage: UIImageView!
-    
+    @IBOutlet weak var slideimage: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        slideimage.image = UIImage(named: "image1")
+        
+        //背景画像を設定
+        let image = UIImage(named: "noteimage")
+        self.view.backgroundColor = UIColor(patternImage: image!)
+        
+        
     }
     
-    
+
     //画像をタップしたら二つ目の画面へ
     @IBAction func tapAction(_ sender: Any) {
     }
