@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //1枚目の画像を載せる
+        //1枚目の画像を表示
         let imageView = images[0]
         slideimage.image = imageView
         
@@ -42,6 +42,8 @@ class ViewController: UIViewController {
 
     //画像をタップしたら二つ目の画面へ
     @IBAction func tapAction(_ sender: Any) {
+        
+      print("タップ反応あり")
         
         
     }
