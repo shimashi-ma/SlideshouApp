@@ -31,21 +31,16 @@ class ViewController: UIViewController {
         slideimage.image = imageView
         
         
-        
         //背景画像を設定
         let backgroundimage = UIImage(named: "noteimage")
         self.view.backgroundColor = UIColor(patternImage: backgroundimage!)
-        
+
         
     }
     
-
-    //画像をタップしたら二つ目の画面へ
-    @IBAction func tapAction(_ sender: Any) {
-        
-      print("タップ反応あり")
-        
-        
+    
+    @IBAction func tapImage(_ sender: Any) {
+        print("たっぷ")
     }
     
     //進む
