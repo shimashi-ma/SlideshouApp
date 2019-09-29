@@ -14,15 +14,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var slideimage: UIImageView!
     
     
+    //画像のインデックス番号用の変数を用意
+    var imageIndex = 0
+
+    
+    //3枚の画像を定数imagesに入れておく
+    let images = [UIImage(named: "image1"),UIImage(named: "image2"),UIImage(named: "image3")]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        slideimage.image = UIImage(named: "image1")
+        //1枚目の画像を載せる
+        let imageView = images[0]
+        slideimage.image = imageView
+        
+        
         
         //背景画像を設定
-        let image = UIImage(named: "noteimage")
-        self.view.backgroundColor = UIColor(patternImage: image!)
+        let backgroundimage = UIImage(named: "noteimage")
+        self.view.backgroundColor = UIColor(patternImage: backgroundimage!)
         
         
     }
@@ -30,14 +42,28 @@ class ViewController: UIViewController {
 
     //画像をタップしたら二つ目の画面へ
     @IBAction func tapAction(_ sender: Any) {
+        
+        
     }
     
     //進む
     @IBAction func nextButton(_ sender: Any) {
+        if imageIndex == 2 {
+            imageIndex = 0
+        } else {
+            imageIndex += 1
+        }
+        slideimage.image = images[imageIndex]
     }
     
     //戻る
     @IBAction func backButton(_ sender: Any) {
+        if imageIndex == 0 {
+            imageIndex = 2
+        } else {
+            imageIndex -= 1
+        }
+        slideimage.image = images[imageIndex]
     }
     
     //再生/停止
