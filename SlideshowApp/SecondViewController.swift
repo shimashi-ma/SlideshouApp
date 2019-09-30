@@ -24,12 +24,14 @@ class SecondViewController: UIViewController {
         //背景画像を設定
         let backgroundimage = UIImage(named: "noteimage")
         self.view.backgroundColor = UIColor(patternImage: backgroundimage!)
-        
+
         
     }
     
-    
-    
+    @IBAction func backbutton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
     
     /*

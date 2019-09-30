@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="top" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
         <!--Second View Controller-->
         <scene sceneID="CpZ-6b-3IR">
             <objects>
-                <viewController id="5ef-tz-WHS" customClass="SecondViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="second" id="5ef-tz-WHS" customClass="SecondViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gTY-j5-g1D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,8 +84,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
-                                    <action selector="returnButton:" destination="5ef-tz-WHS" eventType="touchUpInside" id="a6s-eX-4O9"/>
-                                    <segue destination="qAb-9d-pEm" kind="unwind" unwindAction="unwind:" id="gJZ-dw-11R"/>
+                                    <action selector="backbutton:" destination="5ef-tz-WHS" eventType="touchUpInside" id="wkb-l9-NZC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,7 +96,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ZE-5a-j6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="qAb-9d-pEm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="925" y="96"/>
         </scene>

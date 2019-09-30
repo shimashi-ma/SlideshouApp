@@ -39,8 +39,14 @@ class ViewController: UIViewController {
     }
     
     
+    //画像をタップすると画面遷移
     @IBAction func tapImage(_ sender: Any) {
-        print("たっぷ")
+        //同じstororyboard内であることを定義
+        let storyboard: UIStoryboard = self.storyboard!
+        //移動先のstoryboardをID:secondで選択
+        let second = storyboard.instantiateViewController(withIdentifier: "second")
+        //移動するコード
+        self.present(second, animated: true, completion: nil)
     }
     
     //進む
@@ -67,10 +73,7 @@ class ViewController: UIViewController {
     @IBAction func startButton(_ sender: Any) {
     }
     
-    //二つ目の画面の戻るボタンを押すとこ一つ目の画面に戻る
-    @IBAction func unwind(_ segue: UIStoryboardSegue) {
-    }
-    
+
 
 
 
