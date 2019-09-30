@@ -71,6 +71,15 @@ class ViewController: UIViewController {
     
     //再生/停止
     @IBAction func startButton(_ sender: Any) {
+     
+     //停止ボタンをタップされるまで繰り返す
+        //もしtimerが2秒だったら
+        //imageIndexに1を足す
+        //imageIndexが2だったら0にする
+        //imageIndexを指定して画像を表示させる
+        //timerを0に戻す
+        
+        
     }
     
 

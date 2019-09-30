@@ -18,8 +18,10 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        //拡大画像を表示
+        
         
         //背景画像を設定
         let backgroundimage = UIImage(named: "noteimage")
@@ -28,7 +30,10 @@ class SecondViewController: UIViewController {
         
     }
     
+    
+    //戻るボタン
     @IBAction func backbutton(_ sender: Any) {
+        //ひとつ前の画面に戻る
         self.dismiss(animated: true, completion: nil)
         
     }
