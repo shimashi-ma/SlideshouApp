@@ -110,13 +110,9 @@ class ViewController: UIViewController {
         }
         
         
-        //進むボタン　自動送り中はタップ無効
+        //進むボタン・戻るボタン　自動送り中はタップ無効
         if self.timer != nil {
             nextButton2.isEnabled = false
-        }
-        
-        //戻るボタン　自動送り中はタップ無効
-        if self.timer != nil {
             backButton2.isEnabled = false
         }
         
@@ -141,6 +137,12 @@ class ViewController: UIViewController {
         if self.timer == nil {
             startButton2.isHidden = false
             stopButton2.isHidden = true
+        }
+        
+        //タイマー停止したら、進むボタン・戻るボタンを有効にする
+        if self.timer == nil {
+            nextButton2.isEnabled = true
+            backButton2.isEnabled = true
         }
         
         
