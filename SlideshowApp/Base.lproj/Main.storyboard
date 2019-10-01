@@ -55,6 +55,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backButton2" destination="Wzh-FU-dHU" id="llv-mT-lDD"/>
+                        <outlet property="nextButton2" destination="4Y4-I2-PzU" id="dGv-oY-tcs"/>
                         <outlet property="slideimage" destination="XAx-Pa-eIq" id="MQE-Sb-o4w"/>
                     </connections>
                 </viewController>
