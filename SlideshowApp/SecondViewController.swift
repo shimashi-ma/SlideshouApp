@@ -23,9 +23,6 @@ class SecondViewController: UIViewController {
         //拡大画像を表示
         
         
-        //背景画像を設定
-        let backgroundimage = UIImage(named: "noteimage")
-        self.view.backgroundColor = UIColor(patternImage: backgroundimage!)
 
         
     }

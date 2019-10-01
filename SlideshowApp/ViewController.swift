@@ -77,7 +77,6 @@ class ViewController: UIViewController {
             imageIndex += 1
         }
         slideimage.image = images[imageIndex]
-        
 
         
     }
@@ -94,7 +93,6 @@ class ViewController: UIViewController {
             imageIndex -= 1
         }
         slideimage.image = images[imageIndex]
-        
         
         
     }
