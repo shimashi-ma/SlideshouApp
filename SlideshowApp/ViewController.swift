@@ -25,12 +25,17 @@ class ViewController: UIViewController {
     //タイマーの時間のための変数
     var timer_sec: Int = 0
     
-    //進むボタンのプロパティ　タップ無効用
+    //進むボタン　タップ無効用
     @IBOutlet weak var nextButton2: UIButton!
     
-    //戻るボタンのプロパティ　タップ無効用
+    //戻るボタン　タップ無効用
     @IBOutlet weak var backButton2: UIButton!
     
+    //再生ボタン　表示/非表示用
+    @IBOutlet weak var startButton2: UIButton!
+    
+    //停止ボタン　表示/非表示用
+    @IBOutlet weak var stopButton2: UIButton!
     
     
     override func viewDidLoad() {
@@ -45,6 +50,10 @@ class ViewController: UIViewController {
         //背景画像を設定
         let backgroundimage = UIImage(named: "noteimage")
         self.view.backgroundColor = UIColor(patternImage: backgroundimage!)
+        
+    
+        //停止ボタンを非表示にしておく
+        stopButton2.isHidden = true
 
         
     }
@@ -92,7 +101,7 @@ class ViewController: UIViewController {
     
 
     
-    //再生/停止
+    //再生ボタン
     @IBAction func startButton(_ sender: Any) {
         
         //タイマーが存在しない場合だけ、タイマーを作成して動作させる
@@ -111,10 +120,31 @@ class ViewController: UIViewController {
             backButton2.isEnabled = false
         }
         
+        //タイマー動作したら、再生ボタンを非表示・停止ボタンを表示
+        if self.timer != nil {
+            startButton2.isHidden = true
+            stopButton2.isHidden = false
+        }
 
-        
     }
     
+    //停止ボタン
+    @IBAction func stopButton(_ sender: Any) {
+        
+        //タイマーを停止して、nilに戻しておく
+        if self.timer != nil {
+            self.timer.invalidate()
+            self.timer = nil
+        }
+        
+        //タイマー停止したら、停止ボタンを非表示・再生ボタンを表示
+        if self.timer == nil {
+            startButton2.isHidden = false
+            stopButton2.isHidden = true
+        }
+        
+        
+    }
     
     //タイマー
     @objc func updateTimer(_ timer: Timer) {

@@ -43,11 +43,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZND-n3-3hB">
-                                <rect key="frame" x="271" y="498" width="66" height="30"/>
+                                <rect key="frame" x="289" y="498" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="再生/停止"/>
+                                <state key="normal" title="再生"/>
                                 <connections>
                                     <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XLD-h9-zna"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Set-5C-kyE">
+                                <rect key="frame" x="289" y="498" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="停止"/>
+                                <connections>
+                                    <action selector="stopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ib-yS-o4a"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,6 +66,8 @@
                         <outlet property="backButton2" destination="Wzh-FU-dHU" id="llv-mT-lDD"/>
                         <outlet property="nextButton2" destination="4Y4-I2-PzU" id="dGv-oY-tcs"/>
                         <outlet property="slideimage" destination="XAx-Pa-eIq" id="MQE-Sb-o4w"/>
+                        <outlet property="startButton2" destination="ZND-n3-3hB" id="zWv-75-xpN"/>
+                        <outlet property="stopButton2" destination="Set-5C-kyE" id="hBq-Xg-6Dw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
