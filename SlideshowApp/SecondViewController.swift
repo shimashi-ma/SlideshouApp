@@ -29,10 +29,6 @@ class SecondViewController: UIViewController {
         //拡大画像を表示
         let image = images[enlargedImage2]
         enlargedImage.image = image
-    
-        
-        
-
         
     }
     

@@ -38,6 +38,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var stopButton2: UIButton!
     
     
+    //ボタンや画像を初期値に戻す用　reset()関数でまとめる
+    func reset() {
+        //タイマーを停止して、nilに戻しておく
+        if self.timer != nil {
+            self.timer.invalidate()
+            self.timer = nil
+        }
+        
+        //タイマー停止したら、停止ボタンを非表示・再生ボタンを表示
+        if self.timer == nil {
+            startButton2.isHidden = false
+            stopButton2.isHidden = true
+        }
+        
+        //タイマー停止したら、進むボタン・戻るボタンを有効にする
+        if self.timer == nil {
+            nextButton2.isEnabled = true
+            backButton2.isEnabled = true
+        }
+    }
+    
+    
+    //一番はじめの画面表示
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,11 +69,8 @@ class ViewController: UIViewController {
         let imageView = images[0]
         slideimage.image = imageView
         
-        
-    
         //停止ボタンを非表示にしておく
         stopButton2.isHidden = true
-
         
     }
     
@@ -62,25 +82,17 @@ class ViewController: UIViewController {
         // 遷移先のSecondViewControllerで宣言している変数enlargedImage2に値を代入して渡す
         secondViewController.enlargedImage2 = imageIndex
         
-        //二つ目の画面から戻ってきたときに自動送り止めておきたいから、画面遷移のタイミングでタイマー止めておく
-        if self.timer != nil {
-            self.timer.invalidate()
-            self.timer = nil
-        }
-        
-        
-        
+        //ボタンや画面を初期値に戻す
+        reset()
         
     }
     
     
     //画像をタップすると画面遷移
     @IBAction func tapImage(_ sender: Any) {
-        
-
     }
     
-    //進むボタン
+    //進むボタン　次の画像へ
     @IBAction func nextButton(_ sender: Any) {
         if imageIndex == 2 {
             imageIndex = 0
@@ -91,9 +103,7 @@ class ViewController: UIViewController {
     }
     
 
-    
-    
-    //戻るボタン
+    //戻るボタン　ひとつ前の画像へ
     @IBAction func backButton(_ sender: Any) {
         if imageIndex == 0 {
             imageIndex = 2
@@ -101,15 +111,11 @@ class ViewController: UIViewController {
             imageIndex -= 1
         }
         slideimage.image = images[imageIndex]
-        
-        
     }
     
 
-    
     //再生ボタン
     @IBAction func startButton(_ sender: Any) {
-        
         //タイマーが存在しない場合だけ、タイマーを作成して動作させる
         if self.timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
@@ -133,24 +139,8 @@ class ViewController: UIViewController {
     //停止ボタン
     @IBAction func stopButton(_ sender: Any) {
         
-        //タイマーを停止して、nilに戻しておく
-        if self.timer != nil {
-            self.timer.invalidate()
-            self.timer = nil
-        }
-        
-        //タイマー停止したら、停止ボタンを非表示・再生ボタンを表示
-        if self.timer == nil {
-            startButton2.isHidden = false
-            stopButton2.isHidden = true
-        }
-        
-        //タイマー停止したら、進むボタン・戻るボタンを有効にする
-        if self.timer == nil {
-            nextButton2.isEnabled = true
-            backButton2.isEnabled = true
-        }
-        
+        //ボタンや画像を初期値に戻す
+        reset()
         
     }
     
@@ -159,17 +149,12 @@ class ViewController: UIViewController {
        
         if timer_sec % 2 == 0 {    //もしタイマーの秒数が偶数だったら（2で割った余りが0だったら）
             imageIndex += 1     //imageIndexに1を足す
-            if  imageIndex == 3 {  //もしimageIndexが3になったら
-                imageIndex = 0       //imageIndexを0にする
-            }
+        if  imageIndex == 3 {  //もしimageIndexが3になったら
+            imageIndex = 0       //imageIndexを0にする
+        }
             slideimage.image = images[imageIndex]   //imageIndexを代入して画像を表示させる
-            }
-       
+        }
     }
     
-
-
-
-
 }
 
