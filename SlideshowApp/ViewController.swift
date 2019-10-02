@@ -47,9 +47,6 @@ class ViewController: UIViewController {
         slideimage.image = imageView
         
         
-        //背景画像を設定
-        let backgroundimage = UIImage(named: "noteimage")
-        self.view.backgroundColor = UIColor(patternImage: backgroundimage!)
         
     
         //停止ボタンを非表示にしておく
@@ -81,8 +78,6 @@ class ViewController: UIViewController {
             imageIndex += 1
         }
         slideimage.image = images[imageIndex]
-
-        
     }
     
 
@@ -90,7 +85,6 @@ class ViewController: UIViewController {
     
     //戻るボタン
     @IBAction func backButton(_ sender: Any) {
-        
         if imageIndex == 0 {
             imageIndex = 2
         } else {
