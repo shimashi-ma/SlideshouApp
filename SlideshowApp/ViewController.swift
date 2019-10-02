@@ -61,11 +61,22 @@ class ViewController: UIViewController {
         let secondViewController:SecondViewController = segue.destination as! SecondViewController
         // 遷移先のSecondViewControllerで宣言している変数enlargedImage2に値を代入して渡す
         secondViewController.enlargedImage2 = imageIndex
+        
+        //二つ目の画面から戻ってきたときに自動送り止めておきたいから、画面遷移のタイミングでタイマー止めておく
+        if self.timer != nil {
+            self.timer.invalidate()
+            self.timer = nil
+        }
+        
+        
+        
+        
     }
     
     
     //画像をタップすると画面遷移
     @IBAction func tapImage(_ sender: Any) {
+        
 
     }
     
