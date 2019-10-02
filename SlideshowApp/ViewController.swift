@@ -47,7 +47,6 @@ class ViewController: UIViewController {
         slideimage.image = imageView
         
         
-        
     
         //停止ボタンを非表示にしておく
         stopButton2.isHidden = true
