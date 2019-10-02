@@ -14,6 +14,12 @@ class SecondViewController: UIViewController {
     //拡大表示の画像
     @IBOutlet weak var enlargedImage: UIImageView!
     
+    //画像のインデックス番号を入れる用
+    var enlargedImage2: Int = 0
+    
+    //3枚の画像を定数imagesに入れておく
+    let images = [UIImage(named: "image1"),UIImage(named: "image2"),UIImage(named: "image3")]
+    
     
     
     override func viewDidLoad() {
@@ -21,6 +27,9 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         //拡大画像を表示
+        let image = images[enlargedImage2]
+        enlargedImage.image = image
+    
         
         
 

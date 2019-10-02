@@ -61,12 +61,12 @@ class ViewController: UIViewController {
     
     //画像をタップすると画面遷移
     @IBAction func tapImage(_ sender: Any) {
-        //同じstororyboard内であることを定義
-        let storyboard: UIStoryboard = self.storyboard!
-        //移動先のstoryboardをID:secondで選択
-        let second = storyboard.instantiateViewController(withIdentifier: "second")
-        //移動するコード
-        self.present(second, animated: true, completion: nil)
+        // segueから遷移先のSecondViewControllerを取得する
+        let secondViewController:SecondViewController = segue.destination as! SecondViewController
+        // 遷移先のSecondViewControllerで宣言している変数enlargedImage2に値を代入して渡す
+        secondViewController.enlargedImage2 = imageIndex
+
+
     }
     
     //進むボタン
