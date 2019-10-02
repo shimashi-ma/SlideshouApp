@@ -59,13 +59,17 @@ class ViewController: UIViewController {
     }
     
     
-    //画像をタップすると画面遷移
-    @IBAction func tapImage(_ sender: Any) {
+    //prepare(for:sender:)メソッドで値をわたす
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueから遷移先のSecondViewControllerを取得する
         let secondViewController:SecondViewController = segue.destination as! SecondViewController
         // 遷移先のSecondViewControllerで宣言している変数enlargedImage2に値を代入して渡す
         secondViewController.enlargedImage2 = imageIndex
-
+    }
+    
+    
+    //画像をタップすると画面遷移
+    @IBAction func tapImage(_ sender: Any) {
 
     }
     
