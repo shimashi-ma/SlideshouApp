@@ -22,8 +22,6 @@ class ViewController: UIViewController {
     //タイマー
     var timer: Timer!
     
-    //タイマーの時間のための変数
-    var timer_sec: Int = 0
     
     //進むボタン　タップ無効用
     @IBOutlet weak var nextButton2: UIButton!
@@ -126,10 +124,7 @@ class ViewController: UIViewController {
         if self.timer != nil {
             nextButton2.isEnabled = false
             backButton2.isEnabled = false
-        }
-        
         //タイマー動作したら、再生ボタンを非表示・停止ボタンを表示
-        if self.timer != nil {
             startButton2.isHidden = true
             stopButton2.isHidden = false
         }
@@ -146,14 +141,14 @@ class ViewController: UIViewController {
     
     //タイマー
     @objc func updateTimer(_ timer: Timer) {
+        
+        if imageIndex == 2 {
+            imageIndex = 0
+        } else {
+            imageIndex += 1
+        }
+        slideimage.image = images[imageIndex]
        
-        if timer_sec % 2 == 0 {    //もしタイマーの秒数が偶数だったら（2で割った余りが0だったら）
-            imageIndex += 1     //imageIndexに1を足す
-        if  imageIndex == 3 {  //もしimageIndexが3になったら
-            imageIndex = 0       //imageIndexを0にする
-        }
-            slideimage.image = images[imageIndex]   //imageIndexを代入して画像を表示させる
-        }
     }
     
 }
